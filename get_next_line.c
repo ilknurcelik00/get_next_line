@@ -43,6 +43,11 @@ static char	*update_stash(char *stash)
 	}
 	new_stash = ft_substr(stash, i + 1, ft_strlen(stash) - i - 1);
 	free(stash);
+	if (new_stash && !new_stash[0])
+	{
+		free(new_stash);
+		return (NULL);
+	}
 	return (new_stash);
 }
 
